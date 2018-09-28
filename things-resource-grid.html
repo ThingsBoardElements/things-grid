@@ -64,31 +64,35 @@ Things.ResourceGridBehavior에 필요한 모든 구현이 포함되어 있다.
     <style>
       :host {
         display: block;
-        @apply(--layout-vertical);
-        @apply(--things-table-padding);
+        @apply --layout-vertical;
+        @apply --layout-flex;
+        @apply --things-table-padding;
         --paper-toolbar-content: {
           height: 50px;
-          @apply(--layout-horizontal);
-          @apply(--layout-end-justified);
+          @apply --layout-horizontal;
+          @apply --layout-end-justified;
           padding: 0 10px;
         }
       }
       .grid-container {
-        @apply(--layout-flex);
-        @apply(--layout-vertical);
-        @apply(--things-grid-container);
+        @apply --layout-flex;
+        @apply --layout-vertical;
+        @apply --things-grid-container;
       }
+      
       .grid {
-        @apply(--layout-flex);
-        @apply(--layout-vertical);
-        @apply(--things-grid-view);
+        @apply --layout-flex;
+        @apply --layout-vertical;
+        @apply --things-grid-view;
       }
       .grid::shadow div {
-        @apply(--layout-flex);
-        @apply(--things-grid-pageinator-container);
+        @apply --layout-flex;
+        @apply --things-grid-pageinator-container;
       }
+    
       #paginator-container {
         height: 30px;
+
       }
       paper-toolbar {
         background-color:var(--things-white-background-color);
