@@ -90,7 +90,7 @@ mixin 하고 있어서 그리드에 데이터만 표시하는데 사용된다.
 
     <div class="grid-container">
     	<!-- grid -->
-      <div id="{{gridContainerId}}" class="grid" on-mouseout="_onMouseout"></div>
+      <!-- <div id="{{gridContainerId}}" class="grid" on-mouseout="_onMouseout"></div> -->
       <!-- paginator -->
       <div id="paginator-container" hidden$="[[!showPaginator]]"></div>
     </div>
@@ -205,7 +205,6 @@ mixin 하고 있어서 그리드에 데이터만 표시하는데 사용된다.
 				if(this.grid)
 					this.grid.commit();
 			}
-
 		});
 	</script>
 </dom-module>
