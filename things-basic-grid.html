@@ -9,12 +9,7 @@
 <link rel="import" href="../things-button/things-button-bar.html" />
 
 <link rel="import" href="../things-grid-behavior/things-grid-config-behavior.html" />
-<link rel="import" href="../things-grid-behavior/things-grid-pagination-behavior.html" />
-<link rel="import" href="../things-grid-behavior/things-grid-export-behavior.html" />
-<link rel="import" href="../things-grid-behavior/things-grid-import-behavior.html" />
 <link rel="import" href="../things-grid-behavior/things-grid-addrow-behavior.html" />
-<link rel="import" href="../things-grid-behavior/things-grid-soft-deleterow-behavior.html" />
-<link rel="import" href="../things-grid-behavior/things-grid-save-behavior.html" />
 
 <!--
   기본 그리드. 기본 리소스 그리드는 기본 GridBehavior(Things.GridConfigBehavior)만
@@ -90,12 +85,13 @@
 
     <div class="grid-container">
       <!-- grid -->
-      <div id="{{gridContainerId}}" class="grid" on-mouseout="(_onMouseout)"></div>
+      <!-- prettier-ignore-attribute on-mouseout -->
+      <div id="{{ gridContainerId }}" class="grid" on-mouseout="_onMouseout"></div>
       <!-- paginator -->
       <div id="paginator-container" hidden$="[[!showPaginator]]"></div>
     </div>
 
-    <paper-toolbar hidden$="{{!enableToolbar}}">
+    <paper-toolbar hidden$="{{ !enableToolbar }}">
       <!-- button group -->
       <div class="bottom"><things-button-bar id="button-group" buttons="[[buttons]]"></things-button-bar></div>
     </paper-toolbar>
@@ -105,7 +101,7 @@
     Polymer({
       is: 'things-basic-grid',
 
-      behaviors: [Things.GridConfigBehavior, Things.GridPaginationBehavior],
+      behaviors: [Things.GridConfigBehavior],
 
       properties: {
         /**
