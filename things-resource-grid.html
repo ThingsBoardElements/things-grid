@@ -7,15 +7,7 @@
 <link rel="import" href="../things-button/things-button-group.html" />
 <link rel="import" href="../things-button/things-button-bar.html" />
 <link rel="import" href="../things-grid-behavior/things-grid-config-behavior.html" />
-<link rel="import" href="../things-grid-behavior/things-grid-pagination-behavior.html" />
-<link rel="import" href="../things-grid-behavior/things-grid-export-behavior.html" />
-<link rel="import" href="../things-grid-behavior/things-grid-import-behavior.html" />
 <link rel="import" href="../things-grid-behavior/things-grid-addrow-behavior.html" />
-<link rel="import" href="../things-grid-behavior/things-grid-soft-deleterow-behavior.html" />
-<link rel="import" href="../things-grid-behavior/things-grid-save-behavior.html" />
-<link rel="import" href="../things-grid-behavior/things-grid-print-behavior.html" />
-<link rel="import" href="../things-grid-behavior/things-grid-open-import-behavior.html" />
-<link rel="import" href="../things-grid-behavior/things-grid-request-release-behavior.html" />
 <!--
   기본 라소스 그리드.
   Pagination을 지원하고 import, export, add, delete, save가 가능한 그리드
@@ -95,12 +87,12 @@
     <div class="grid-container">
       <!-- grid -->
       <!-- div id="{{gridContainerId}}" class="grid" on-mouseout="_onMouseout"></div -->
-      <div id="{{gridContainerId}}" class="grid"></div>
+      <div id="{{ gridContainerId }}" class="grid"></div>
       <!-- paginator -->
       <div id="paginator-container" hidden$="[[!showPaginator]]"></div>
     </div>
 
-    <paper-toolbar hidden$="{{!enableToolbar}}">
+    <paper-toolbar hidden$="{{ !enableToolbar }}">
       <!-- button group -->
       <div class="bottom"><things-button-bar id="button-group" buttons="[[buttons]]"></things-button-bar></div>
     </paper-toolbar>
@@ -110,18 +102,7 @@
     Polymer({
       is: 'things-resource-grid',
 
-      behaviors: [
-        Things.GridConfigBehavior,
-        Things.GridPaginationBehavior,
-        Things.GridImportBehavior,
-        Things.GridExportBehavior,
-        Things.GridAddrowBehavior,
-        Things.GridSoftDeleterowBehavior,
-        Things.GridSaveBehavior,
-        Things.GridPrintBehavior,
-        Things.GridOpenImportBehavior,
-        Things.GridRequestReleaseBehavior
-      ],
+      behaviors: [Things.GridConfigBehavior, Things.GridAddrowBehavior],
 
       listeners: {
         'things-grid-configure-failed': '_gridConfigureFailed'
